@@ -1,0 +1,27 @@
+@font-face {
+    font-family: 'Inter';
+    font-weight: 400;
+    font-style: normal;
+    src: url('/docs_engine/assets/fonts/inter/Inter-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Inter';
+    font-weight: 500;
+    font-style: normal;
+    src: url('/docs_engine/assets/fonts/inter/Inter-Medium.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Inter';
+    font-weight: 600;
+    font-style: normal;
+    src: url('/docs_engine/assets/fonts/inter/Inter-SemiBold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Inter';
+    font-weight: 700;
+    font-style: normal;
+    src: url('/docs_engine/assets/fonts/inter/Inter-Bold.ttf') format('truetype');
+}
