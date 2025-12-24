@@ -86,7 +86,7 @@
         @section('content_scripts')
             @include('manajemen.partials.scripts.kategoriscript')
             @include('manajemen.partials.scripts.modulscript')
-            <!-- @include('manajemen.partials.scripts.kontenscript') -->
+            @include('manajemen.partials.scripts.kontenscript')
         @endsection
         <!--end::About-->
     </div>

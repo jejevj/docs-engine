@@ -59,7 +59,30 @@
                 <!--end::Card header-->
                 <!--begin::Card body-->
                 <!--end::Card body-->
-
+            </div>
+            <div class="card mb-8">
+                <div class="card-header">
+                    <h3 class="card-title">Detail Dokumentasi</h3>
+                </div>
+                <div class="card-body">
+                    <div class="mb-10">
+                        <label for="exampleFormControlInput1" class="required form-label">Judul Dokumentasi</label>
+                        <input type="text" name="judul_posts" class="form-control form-control-solid" placeholder="Judul Disini" />
+                    </div>
+                    <div class="mb-10">
+                        <label for="exampleFormControlInput1" class="form-label">Filename</label>
+                        <input type="text" name="filename" class="form-control form-control-solid" placeholder="judul-disini" readonly/>
+                    </div>
+                    <div class="mb-10">
+                        <label for="exampleFormControlInput1" class="required form-label">Pilih Modul</label>
+                        <select class="form-select " data-control="select2" aria-label="Select Module">
+                            <option>Open this select menu</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+                </div>
             </div>
             <div class="card mb-8">
                 <div class="card-header">
@@ -92,6 +115,12 @@
                         </div>
                         <div class="col-md-10 mb-3">
                             <textarea id="MyID"></textarea>
+                            <div class="d-grid gap-2">
+                                <button type="button" name="" id="" class="btn btn-primary py-3 my-3">
+                                    Simpan Konten
+                                </button>
+                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -227,30 +256,30 @@
                 card.className = 'card image-card';
 
                 card.innerHTML = `
-                                                                                                                                                                    <div class="position-relative">
-                                                                                                                                                                        <img src="${image.data}">
-                                                                                                                                                                        <button
-                                                                                                                                                                            class="btn btn-sm btn-danger position-absolute top-0 end-0 m-2"
-                                                                                                                                                                            title="Delete"
-                                                                                                                                                                        >
-                                                                                                                                                                            &times;
-                                                                                                                                                                        </button>
-                                                                                                                                                                    </div>
+                                                                                                                                                                                                                    <div class="position-relative">
+                                                                                                                                                                                                                        <img src="${image.data}">
+                                                                                                                                                                                                                        <button
+                                                                                                                                                                                                                            class="btn btn-sm btn-danger position-absolute top-0 end-0 m-2"
+                                                                                                                                                                                                                            title="Delete"
+                                                                                                                                                                                                                        >
+                                                                                                                                                                                                                            &times;
+                                                                                                                                                                                                                        </button>
+                                                                                                                                                                                                                    </div>
 
-                                                                                                                                                                    <div class="card-body p-3">
-                                                                                                                                                                        <div class="fw-bold text-truncate mb-2">${image.title}</div>
+                                                                                                                                                                                                                    <div class="card-body p-3">
+                                                                                                                                                                                                                        <div class="fw-bold text-truncate mb-2">${image.title}</div>
 
-                                                                                                                                                                        <select class="form-select form-select-sm mb-2">
-                                                                                                                                                                            <option value="300">Small</option>
-                                                                                                                                                                            <option value="600" selected>Medium</option>
-                                                                                                                                                                            <option value="900">Large</option>
-                                                                                                                                                                        </select>
+                                                                                                                                                                                                                        <select class="form-select form-select-sm mb-2">
+                                                                                                                                                                                                                            <option value="300">Small</option>
+                                                                                                                                                                                                                            <option value="600" selected>Medium</option>
+                                                                                                                                                                                                                            <option value="900">Large</option>
+                                                                                                                                                                                                                        </select>
 
-                                                                                                                                                                        <button class="btn btn-sm btn-primary w-100">
-                                                                                                                                                                            Insert
-                                                                                                                                                                        </button>
-                                                                                                                                                                    </div>
-                                                                                                                                                                `;
+                                                                                                                                                                                                                        <button class="btn btn-sm btn-primary w-100">
+                                                                                                                                                                                                                            Insert
+                                                                                                                                                                                                                        </button>
+                                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                                `;
 
                 // Insert image to editor
                 card.querySelector('.btn-primary').onclick = () => {
@@ -274,8 +303,8 @@
             function insertToEditor(src, width) {
                 // Wrap image in <a> that triggers modal
                 const html = `<a href="#" class="preview-link" data-src="${src}">
-                                                                                                                                                    <img src="${src}" width="${width}" style="cursor:pointer;" />
-                                                                                                                                                  </a>\n`;
+                                                                                                                                                                                                    <img src="${src}" width="${width}" style="cursor:pointer;" />
+                                                                                                                                                                                                  </a>\n`;
 
                 easyMDE.codemirror.replaceSelection(html);
                 easyMDE.codemirror.focus();
@@ -376,21 +405,21 @@
                 let tocHTML = '';
                 headings.forEach(heading => {
                     tocHTML += `
-                                <div class="menu-item menu-link-indention menu-accordion" data-kt-menu-trigger="click" style="margin-left: ${heading.level * 4}px;">
-                                    <!--begin::Menu link-->
-                                    <a href="#${heading.id}" class="menu-link py-1">
-                                        <span class="menu-title">${heading.text}</span>
-                                        <span class="menu-arrow"></span>
-                                    </a>
-                                    <!--end::Menu link-->
+                                                                                <div class="menu-item menu-link-indention menu-accordion" data-kt-menu-trigger="click" style="margin-left: ${heading.level * 4}px;">
+                                                                                    <!--begin::Menu link-->
+                                                                                    <a href="#${heading.id}" class="menu-link py-1">
+                                                                                        <span class="menu-title">${heading.text}</span>
+                                                                                        <span class="menu-arrow"></span>
+                                                                                    </a>
+                                                                                    <!--end::Menu link-->
 
-                                    <!--begin::Menu sub-->
-                                    <div class="menu-sub menu-sub-accordion pt-1">
-                                        <!-- Add sub-menu items here if needed -->
-                                    </div>
-                                    <!--end::Menu sub-->
-                                </div>
-                            `;
+                                                                                    <!--begin::Menu sub-->
+                                                                                    <div class="menu-sub menu-sub-accordion pt-1">
+                                                                                        <!-- Add sub-menu items here if needed -->
+                                                                                    </div>
+                                                                                    <!--end::Menu sub-->
+                                                                                </div>
+                                                                            `;
                 });
 
                 tocContainer.innerHTML = tocHTML;

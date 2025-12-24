@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Manajemen\ManajemenController;
 use App\Http\Controllers\Manajemen\MKategoriController;
 use App\Http\Controllers\Manajemen\MModulController;
+use App\Http\Controllers\Manajemen\MPostsController;
 use App\Http\Controllers\Posts\DokController;
 use Illuminate\Support\Facades\Route;
 
@@ -43,6 +44,12 @@ Route::prefix('docs_engine')->group(function () {
         Route::delete('/destroymodul/{id}', [MModulController::class, 'destroy'])->name('destroymodul');
         Route::put('/updatemodul/{id}', [MModulController::class, 'update'])->name('updatemodul');
         Route::get('/modul/data', [MModulController::class, 'getModul'])->name('datamodul');
+
+        // KONTEN MANAJEMEN
+        Route::post('/storekonten', [MPostsController::class, 'store'])->name('storekonten');
+        Route::delete('/destroykonten/{id}', [MPostsController::class, 'destroy'])->name('destroykonten');
+        Route::put('/updatekonten/{id}', [MPostsController::class, 'update'])->name('updatekonten');
+        Route::get('/konten/data', [MPostsController::class, 'getPosts'])->name('datakonten');
 
 
 

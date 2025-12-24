@@ -1,0 +1,47 @@
+services:
+  # Web Server (PHP + Laravel development server)
+  web:
+    build: .
+    container_name: docs_engine
+    ports:
+      - "8004:8000"  # Map host port 8080 to container port 8000 (default for 'php artisan serve')
+    volumes:
+      - .:/var/www/html  # Mount the current directory to the container
+      - storage:/var/www/html/storage  # Mount the shared storage volume
+    networks:
+      - docs_network
+    command: php artisan serve --host=0.0.0.0 --port=8000  # Run Laravel using the built-in server
+    restart: unless-stopped  # Automatically restart the container unless it is explicitly stopped
+    depends_on:
+      - redis  # Ensures Redis is up before the web service starts
+      
+  # Node.js (for running npm run dev)
+  node:
+    build: ./public/kemenag-docs  # Specify the correct path to your Node.js app folder
+    container_name: kemenag_docs
+    ports:
+      - "1313:1313"  # Expose port 1313 for npm run dev
+    volumes:
+      - ./public/kemenag-docs:/usr/src/app  # Mount the Node.js app folder into the container
+      - storage:/var/www/html/storage  # Mount the same storage volume as in the web container
+    networks:
+      - docs_network
+    command: npm run dev  # Start the development server for your Node.js app
+    restart: unless-stopped  # Automatically restart the container unless it is explicitly stopped
+    depends_on:
+      - redis  # Optional, if your Node.js app depends on Redis
+    entrypoint: /bin/bash -c "ln -s /var/www/html/storage /usr/src/app/kemenag-docs/docs && npm run dev"
+
+
+  redis:
+    image: redis:alpine
+    container_name: redis
+    networks:
+      - docs_network
+
+volumes:
+  storage:  # Declare a volume to share the 'storage' directory between containers
+  
+networks:
+  docs_network:
+    driver: bridge
