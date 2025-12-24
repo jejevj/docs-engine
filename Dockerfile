@@ -21,10 +21,12 @@ RUN curl -sL https://deb.nodesource.com/setup_22.x | bash - \
     && npm install -g npm@10.9.2
 
 # Install Hugo (latest version)
-RUN curl -sL https://github.com/gohugoio/hugo/releases/download/v0.116.1/hugo_0.116.1_Linux-64bit.tar.gz | tar xz -C /usr/local/bin --strip-components=1
-
-# Verify Hugo installation (optional)
-RUN hugo version
+RUN curl -sL https://github.com/gohugoio/hugo/releases/download/v0.153.2/hugo_0.153.2_Linux-64bit.tar.gz -o /tmp/hugo.tar.gz \
+    && tar -xzvf /tmp/hugo.tar.gz -C /usr/local/bin \
+    && chmod +x /usr/local/bin/hugo \
+    && echo "Hugo installed at: $(which hugo)" \
+    && hugo version
+    
 
 # Install Composer globally
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
