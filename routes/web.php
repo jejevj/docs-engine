@@ -9,7 +9,13 @@ use App\Http\Controllers\Manajemen\MPostsController;
 use App\Http\Controllers\Posts\DokController;
 use Illuminate\Support\Facades\Route;
 
+Route::get('/', function () {
+    return redirect('/docs');
+});
+
 Route::prefix('docs_engine')->group(function () {
+
+    Route::get('/', [HomeController::class, 'index'])->name('');
     // Home route (Dashboard)
     Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
 
@@ -28,6 +34,8 @@ Route::prefix('docs_engine')->group(function () {
     // Protected routes - these require authentication
     Route::middleware('auth')->group(function () {
         // Add your protected routes here
+
+        Route::get('/', [HomeController::class, 'index'])->name('empty');
         Route::get('/home', [HomeController::class, 'index'])->name('home');
         Route::get('/manajemen', [ManajemenController::class, 'index'])->name('manajemen.index');
 
@@ -38,7 +46,7 @@ Route::prefix('docs_engine')->group(function () {
         Route::put('/updatekategori/{id}', [MKategoriController::class, 'update'])->name('updatekategori');
         Route::get('/kategori/data', [MKategoriController::class, 'getKategori'])->name('datakategori');
 
-        
+
         // MODUL MANAJEMEN
         Route::post('/storemodul', [MModulController::class, 'store'])->name('storemodul');
         Route::delete('/destroymodul/{id}', [MModulController::class, 'destroy'])->name('destroymodul');
@@ -50,9 +58,6 @@ Route::prefix('docs_engine')->group(function () {
         Route::delete('/destroykonten/{id}', [MPostsController::class, 'destroy'])->name('destroykonten');
         Route::put('/updatekonten/{id}', [MPostsController::class, 'update'])->name('updatekonten');
         Route::get('/konten/data', [MPostsController::class, 'getPosts'])->name('datakonten');
-
-
-
 
         // BUAT POST
         Route::get('/buatpost', [DokController::class, 'index'])->name('buatpost');
