@@ -1,15 +1,15 @@
             <script>
                 $(document).ready(function () {
-                    $('#kategoriTable').DataTable({
+                    $('#kontenTable').DataTable({
                         processing: true,
                         serverSide: true,
                         ajax: {
-                            url: '{{ route('datakategori') }}', // The URL to the DataTables controller method
+                            url: '{{ route('datamodul') }}', // The URL to the DataTables controller method
                             type: 'GET',
                         },
                         columns: [
                             { data: 'id' },
-                            { data: 'nama_kategori' },
+                            { data: 'nama_modul' },
                             { data: 'created_by' },
                             {
                                 data: 'created_by',
@@ -54,7 +54,7 @@
                         var name = $('input[name="name"]').val();
                         var id = $(this).attr('data-id'); // Check if editing or creating
 
-                        var url = id ? '{{ route('updatekategori', ':id') }}'.replace(':id', id) : '{{ route('storekategori') }}';
+                        var url = id ? '{{ route('updatemodul', ':id') }}'.replace(':id', id) : '{{ route('storemodul') }}';
                         var method = id ? 'PUT' : 'POST';
 
                         $.ajax({

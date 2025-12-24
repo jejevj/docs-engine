@@ -28,18 +28,22 @@ class MKategoriController extends Controller
             'updated_by' => auth()->id(),
         ]);
 
-        return redirect()->route('manajemen.index')->with('success', 'Kategori created successfully.');
+
+        return response()->json([
+            'message' => 'Kategori inserted successfully!',
+            'data' => $kategori
+        ], 200);
     }
 
     public function update(Request $request, $id)
-    {   
+    {
         $kategori = MKategori::findOrFail($id);
         $validated = $request->validate([
             'nama_kategori' => 'required|string|max:255',
         ]);
         $kategori->update([
             'nama_kategori' => $validated['nama_kategori'],
-            'updated_by' => Auth::id(),  
+            'updated_by' => Auth::id(),
         ]);
         return response()->json([
             'message' => 'Category updated successfully!',

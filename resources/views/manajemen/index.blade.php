@@ -54,8 +54,8 @@
                                 <!--end::Nav item-->
                                 <!--begin::Nav item-->
                                 <li class="nav-item">
-                                    <a class="nav-link text-active-primary me-6" data-bs-toggle="tab"
-                                        href="#kt_tab_pane_2">Modul</a>
+                                    <a class="nav-link text-active-primary me-6" data-bs-toggle="tab" href="#kt_tab_pane_2"
+                                        id="kt_tab_pane_2tab">Modul</a>
                                 </li>
                                 <!--end::Nav item-->
                                 <!--begin::Nav item-->
@@ -75,7 +75,7 @@
                 <!-- TABS HERE -->
                 <div class="tab-content" id="myTabContent">
                     @include('manajemen.partials.kategori')
-                    @include('manajemen.partials.modul')
+                    @include('manajemen.partials.modul', ['kategoris' => $kategoris])
                     @include('manajemen.partials.konten')
                 </div>
             </div>
@@ -84,9 +84,9 @@
 
         </div>
         @section('content_scripts')
-        @include('manajemen.partials.scripts.kategoriscript')
-        <!-- @include('manajemen.partials.scripts.modulscript')
-        @include('manajemen.partials.scripts.kontenscript') -->
+            @include('manajemen.partials.scripts.kategoriscript')
+            @include('manajemen.partials.scripts.modulscript')
+            <!-- @include('manajemen.partials.scripts.kontenscript') -->
         @endsection
         <!--end::About-->
     </div>
