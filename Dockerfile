@@ -31,22 +31,23 @@ RUN curl -sL https://github.com/gohugoio/hugo/releases/download/v0.153.2/hugo_0.
 # Install Composer globally
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
+
+RUN chown -R www-data:www-data /var/www/html
 # Modify PHP configuration settings directly
 RUN echo "max_execution_time = 300" >> /usr/local/etc/php/conf.d/custom.ini \
     && echo "upload_max_filesize = 128M" >> /usr/local/etc/php/conf.d/custom.ini \
     && echo "post_max_size = 128M" >> /usr/local/etc/php/conf.d/custom.
 
-COPY . /var/www/html
-
-# Install project dependencies
-RUN composer install
     
 # Set the working directory in the container
 WORKDIR /var/www/html
 
+
 # Copy the Laravel project into the container (superuser root permissions will apply)
 COPY . .
 
+# Install project dependencies
+RUN composer install
 # Install Laravel dependencies using Composer (runs with root access)
 # RUN composer install --optimize-autoloader
 
