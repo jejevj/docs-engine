@@ -34,14 +34,14 @@ services:
 
 
   redis:
-    image: redis:alpine
+    image: redis
     container_name: redis
     networks:
       - docs_network
 
 volumes:
   storage:  # Declare a volume to share the 'storage' directory between containers
-  
+
 networks:
   docs_network:
     driver: bridge
