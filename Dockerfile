@@ -50,6 +50,8 @@ RUN chown -R www-data:www-data /var/www/html
 # Install project dependencies using Composer
 RUN composer install --no-dev --optimize-autoloader
 
+RUN ls -la /var/www/html/vendor
+
 # Expose port 8000 (for the Laravel development server)
 EXPOSE 8000
 
