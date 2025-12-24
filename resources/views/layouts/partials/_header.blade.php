@@ -73,10 +73,10 @@
                         <!--begin:Menu item (Report)-->
                         <div data-kt-menu-trigger="{default: 'click', lg: 'hover'}"
                             data-kt-menu-placement="bottom-start" data-kt-menu-offset="-400,0"
-                            class="menu-item menu-lg-down-accordion me-lg-2 {{ Route::currentRouteName() == 'report' ? 'here show menu-here-bg' : '' }}">
+                            class="menu-item menu-lg-down-accordion me-lg-2 {{ Route::currentRouteName() == 'buatpost' ? 'here show menu-here-bg' : '' }}">
 
                             <!--begin:Menu link-->
-                            <a href="#" class="menu-link {{ Route::currentRouteName() == 'report' ? 'active' : '' }}">
+                            <a href="{{ route('buatpost') }}" class="menu-link {{ Route::currentRouteName() == 'buatpost' ? 'active' : '' }}">
                                 <span class="menu-icon">
                                     <i class="ki-duotone ki-notepad-edit fs-3">
                                         <span class="path1"></span>

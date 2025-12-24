@@ -3,7 +3,7 @@
 <!--begin::Head-->
 
 <head>
-    <title>Dashboard - ZAWA</title>
+    <title>Login - Kemenag Documentation</title>
     <meta charset="utf-8" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />

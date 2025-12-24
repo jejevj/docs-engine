@@ -3,7 +3,7 @@
 <!--begin::Head-->
 
 <head>
-    <title>Dashboard - ZAWA</title>
+    <title>CMS - Kemenag Documentation</title>
     <meta charset="utf-8" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
@@ -56,13 +56,11 @@
 
             <div class="app-wrapper flex-column flex-row-fluid" id="kt_app_wrapper">
 
-                <div class="app-container container-xxl">
                     @yield('content')
                     @include('layouts.partials._footer')
                     @include('layouts.partials._scrolltop')
                     @include('layouts.partials._scripts')
                     @yield('content_scripts')
-                </div>
             </div>
         </div>
     </div>
