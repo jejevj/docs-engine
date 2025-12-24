@@ -11,10 +11,12 @@ RUN apt-get update && apt-get install -y \
     git \
     libmemcached-dev \
     curl \
+    libicu-dev \
+    libxpm-dev \
     && pecl install redis \
     && docker-php-ext-enable redis \
-    && docker-php-ext-install pdo pdo_mysql zip gd \
-    && docker-php-ext-install intl  # Ensure the intl extension is installed correctly
+    && docker-php-ext-install pdo pdo_mysql zip gd intl
+
 
 # Install Node.js and npm
 RUN curl -sL https://deb.nodesource.com/setup_22.x | bash - \
