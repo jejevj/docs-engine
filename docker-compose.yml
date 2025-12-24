@@ -17,7 +17,9 @@ services:
       
   # Node.js (for running npm run dev)
   node:
-    build: ./public/kemenag-docs  # Specify the correct path to your Node.js app folder
+    build:
+      context: .                      # Look in the root directory
+      dockerfile: Dockerfile
     container_name: kemenag_docs
     ports:
       - "1313:1313"  # Expose port 1313 for npm run dev
