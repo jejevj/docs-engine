@@ -9,13 +9,10 @@ use App\Http\Controllers\Manajemen\MPostsController;
 use App\Http\Controllers\Posts\DokController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return redirect('/docs');
-});
 
 Route::prefix('docs_engine')->group(function () {
 
-    Route::get('/', [HomeController::class, 'index'])->name('');
+    // Route::get('/', [HomeController::class, 'index'])->name('');
     // Home route (Dashboard)
     Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard');
 
