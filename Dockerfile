@@ -13,7 +13,8 @@ RUN apt-get update && apt-get install -y \
     curl \
     && pecl install redis \
     && docker-php-ext-enable redis \
-    && docker-php-ext-install pdo pdo_mysql zip gd
+    && docker-php-ext-install pdo pdo_mysql zip gd \
+    docker-php-ext-install intl
 
 # Install Node.js and npm
 RUN curl -sL https://deb.nodesource.com/setup_22.x | bash - \
