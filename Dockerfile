@@ -56,4 +56,3 @@ COPY .env .env.docker
 EXPOSE 8000
 
 # Set the command to run the Laravel development server
-# CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=8000"]
