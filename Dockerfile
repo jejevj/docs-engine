@@ -23,6 +23,8 @@ RUN curl -sL https://deb.nodesource.com/setup_22.x | bash - \
     && apt-get install -y nodejs \
     && npm install -g npm@10.9.2
 
+RUN npm install -g yarn
+
 # Install Hugo (latest version)
 RUN curl -sL https://github.com/gohugoio/hugo/releases/download/v0.153.2/hugo_0.153.2_Linux-64bit.tar.gz -o /tmp/hugo.tar.gz \
     && tar -xzvf /tmp/hugo.tar.gz -C /usr/local/bin \

@@ -5,7 +5,8 @@
     "logo_darkmode": "/src/assets/ico.png",
     "logo_width": "32",
     "logo_height": "32",
-    "logo_text": "SIZAWA"
+    "logo_text": "SIZAWA",
+    "base_url": "https://127.0.0.1:4321/sizawa-docs"
   },
 
   "settings": {
@@ -28,6 +29,6 @@
       "en": "Get Started",
       "fr": "Erste Schritte"
     },
-    "link": "/getting-started/introduction/overview/"
+    "link": "/docs-sizawa/getting-started/introduction/quickstart"
   }
 }

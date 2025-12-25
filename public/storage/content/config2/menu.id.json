@@ -2,11 +2,11 @@
   "main": [
     {
       "name": "Beranda",
-      "url": "/docs-sizawa"
+      "url": "/"
     },
     {
       "name": "Dokumentasi",
-      "url": "/docs-sizawa/getting-started/introduction/quickstart/"
+      "url": "/getting-started/introduction/overview/"
     }
   ]
 }

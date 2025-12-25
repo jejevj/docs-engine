@@ -6,7 +6,7 @@
                 {
                     "label": "[seti:vite] Introduction",
                     "autogenerate": {
-                        "directory": "getting-started\/introduction"
+                        "directory": "docs-sizawa\/getting-started\/introduction"
                     }
                 }
             ]
@@ -17,7 +17,7 @@
                 {
                     "label": "[icon] DTSEN",
                     "autogenerate": {
-                        "directory": "sistem-informasi-zakat\/dtsen"
+                        "directory": "docs-sizawa\/sistem-informasi-zakat\/dtsen"
                     }
                 }
             ]

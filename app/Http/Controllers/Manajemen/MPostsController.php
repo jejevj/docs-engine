@@ -35,9 +35,9 @@ class MPostsController extends Controller
         $modul_slug = strtolower(str_replace(' ', '', $modul->nama_modul));  // Assuming 'nama_modul' is the module name
 
         // Create the metadata for the markdown file
-        $metadata = "---\n"; 
+        $metadata = "---\n";
         $metadata .= "title: " . $validated['judul_posts'] . "\n";
-        $metadata .= "description: " . (string)$validated['deskripsi'] . "\n";
+        $metadata .= "description: " . (string) $validated['deskripsi'] . "\n";
         $metadata .= "---\n\n";  // End of metadata, and add a blank line
 
         // Combine the metadata with the content
@@ -47,7 +47,7 @@ class MPostsController extends Controller
         $fileName = strtolower(str_replace(' ', '-', $validated['judul_posts'])) . '.md';  // Use 'judul_posts' as the filename
 
         // Define the file path with the required directory structure
-        $filePath = 'content/docs/' . $kategori_slug . '/' . $modul_slug . '/' . $fileName;
+        $filePath = 'content/docs/docs-sizawa/' . $kategori_slug . '/' . $modul_slug . '/' . $fileName;
 
         // Store the markdown content as a .md file in the 'public' disk under the created path
         Storage::disk('public')->put($filePath, $finalContent);
@@ -205,7 +205,7 @@ class MPostsController extends Controller
                         $category['items'][] = [
                             'label' => "[icon] $modul_name",
                             'autogenerate' => [
-                                'directory' => "$kategori_slug/$modul_slug"
+                                'directory' => "docs-sizawa/" . "$kategori_slug/$modul_slug"
                             ]
                         ];
                     }
@@ -221,7 +221,7 @@ class MPostsController extends Controller
                         [
                             'label' => "[icon] $modul_name",
                             'autogenerate' => [
-                                'directory' => "$kategori_slug/$modul_slug"
+                                'directory' => "docs-sizawa/" . "$kategori_slug/$modul_slug"
                             ]
                         ]
                     ]
@@ -240,7 +240,7 @@ class MPostsController extends Controller
                             [
                                 'label' => "[icon] $modul_name",
                                 'autogenerate' => [
-                                    'directory' => "$kategori_slug/$modul_slug"
+                                    'directory' => "docs-sizawa/" . "$kategori_slug/$modul_slug"
                                 ]
                             ]
                         ]
