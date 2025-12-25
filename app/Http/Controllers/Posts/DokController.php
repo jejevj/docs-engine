@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Posts;
 
 use App\Http\Controllers\Controller;
+use App\Models\Manajemen\MModul;
 use Illuminate\Http\Request;
 
 class DokController extends Controller
@@ -13,7 +14,12 @@ class DokController extends Controller
     public function index()
     {
         //
-        return view('dok.buatpost');
+        $modul = MModul::select(['id', 'nama_modul', 'nama_kategori'])->get();
+        // dump($modul);
+        $data = [
+            'modul' => $modul
+        ];
+        return view('dok.buatpost', $data);
     }
 
     /**

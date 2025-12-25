@@ -75,7 +75,8 @@ return [
 
     'links' => [
         public_path('storage') => storage_path('app/public'),
-        public_path('kemenag-docs\content') => storage_path('app/public/content'),
+        public_path('dockit-astro\src\config') => storage_path('app/public/content/config'),
+        public_path('dockit-astro\src\content\docs') => storage_path('app/public/content/docs'),
     ],
 
 ];

@@ -15,6 +15,7 @@ class MPosts extends Model
 
     protected $fillable = [
         'judul_posts',
+        'deskripsi',
         'id_modul',
         'parent_post_id',
         'filename',
