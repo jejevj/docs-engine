@@ -35,7 +35,7 @@ class MPostsController extends Controller
         $modul_slug = strtolower(str_replace(' ', '', $modul->nama_modul));  // Assuming 'nama_modul' is the module name
 
         // Create the metadata for the markdown file
-        $metadata = "---\n";
+        $metadata = "---\n"; 
         $metadata .= "title: " . $validated['judul_posts'] . "\n";
         $metadata .= "description: " . (string)$validated['deskripsi'] . "\n";
         $metadata .= "---\n\n";  // End of metadata, and add a blank line
