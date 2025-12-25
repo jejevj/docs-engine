@@ -1,0 +1,12 @@
+{
+  "main": [
+    {
+      "name": "Beranda",
+      "url": "/"
+    },
+    {
+      "name": "Dokumentasi",
+      "url": "/getting-started/introduction/overview/"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "site": {
+    "title": "SIZAWA",
+    "logo": "/src/assets/ico.png",
+    "logo_darkmode": "/src/assets/ico.png",
+    "logo_width": "32",
+    "logo_height": "32",
+    "logo_text": "SIZAWA"
+  },
+
+  "settings": {
+    "search": true,
+    "theme_switcher": true
+  },
+
+  "params": {
+    "footer_contact": {
+      "enable": true,
+      "action": "#"
+    },
+    "copyright": "Designed and Developed by <a class=\"text-primary hover:underline no-underline\" href=\"https://kemenag.go.id\" target=\"_blank\" rel=\"noopener\" aria-label=\"Kemenag\">Kemenag RI</a> Copyright &copy; 2025."
+  },
+
+  "navigation_button": {
+    "enable": true,
+    "label": "Ikhisiar",
+    "translations": {
+      "en": "Get Started",
+      "fr": "Erste Schritte"
+    },
+    "link": "/getting-started/introduction/overview/"
+  }
+}
