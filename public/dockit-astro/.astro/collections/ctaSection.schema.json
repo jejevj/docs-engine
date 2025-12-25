@@ -1,0 +1,58 @@
+{
+  "$ref": "#/definitions/ctaSection",
+  "definitions": {
+    "ctaSection": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "enable": {
+          "type": "boolean"
+        },
+        "fill_button": {
+          "type": "object",
+          "properties": {
+            "label": {
+              "type": "string"
+            },
+            "link": {
+              "type": "string"
+            },
+            "enable": {
+              "type": "boolean"
+            }
+          },
+          "additionalProperties": false
+        },
+        "outline_button": {
+          "type": "object",
+          "properties": {
+            "label": {
+              "type": "string"
+            },
+            "link": {
+              "type": "string"
+            },
+            "enable": {
+              "type": "boolean"
+            }
+          },
+          "additionalProperties": false
+        },
+        "$schema": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "fill_button",
+        "outline_button"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

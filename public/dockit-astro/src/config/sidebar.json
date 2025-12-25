@@ -1,0 +1,26 @@
+{
+    "main": [
+        {
+            "label": "Getting Started",
+            "items": [
+                {
+                    "label": "[seti:vite] Introduction",
+                    "autogenerate": {
+                        "directory": "getting-started\/introduction"
+                    }
+                }
+            ]
+        },
+        {
+            "label": "Sistem Informasi Zakat",
+            "items": [
+                {
+                    "label": "[icon] DTSEN",
+                    "autogenerate": {
+                        "directory": "sistem-informasi-zakat\/dtsen"
+                    }
+                }
+            ]
+        }
+    ]
+}
