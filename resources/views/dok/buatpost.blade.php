@@ -172,7 +172,11 @@
     @section('content_scripts')
 
         <link rel="stylesheet" href="assets/css/easymde.min.css">
+
+        <!-- <script src="assets/js/scripts.bundle.js"></script> -->
+        <!-- <script src="https://unpkg.com/easymde/dist/easymde.min.js"></script> -->
         <script src="assets/js/easymde.min.js"></script>
+        
 
         <script>
             const easyMDE = new EasyMDE({
