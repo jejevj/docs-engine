@@ -21,6 +21,17 @@
                     }
                 }
             ]
+        },
+        {
+            "label": "Sistem Informasi Wakaf",
+            "items": [
+                {
+                    "label": "[icon] Kampung Wakaf",
+                    "autogenerate": {
+                        "directory": "docs-sizawa\/sistem-informasi-wakaf\/kampungwakaf"
+                    }
+                }
+            ]
         }
     ]
 }
