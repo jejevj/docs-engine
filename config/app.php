@@ -14,6 +14,7 @@ return [
     */
 
     'name' => env('APP_NAME', 'Laravel'),
+    'documentation_url' => env('DOCUMENTATION_URL', 'http://127.0.0.1:4321/docs-sizawa'),
 
     /*
     |--------------------------------------------------------------------------
