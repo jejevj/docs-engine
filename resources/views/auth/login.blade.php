@@ -6,7 +6,7 @@
         <!--begin::Page bg image-->
         <style>
             body {
-                background-image: url('https://static.vecteezy.com/system/resources/previews/013/545/715/non_2x/abstract-background-with-colorful-wavy-lines-abstract-green-yellow-gradient-background-design-vector.jpg');
+                background-image: url('assets/media/bg-login.jpg');
             }
 
             [data-bs-theme="dark"] body {
@@ -45,8 +45,8 @@
                         </a>
 
                         <!--begin::Form-->
-                        
-                         <form method="POST" class="form w-100" action="{{ route('login') }}">
+
+                        <form method="POST" class="form w-100" id="loginForm">
                             @csrf
                             <!--begin::Heading-->
                             <div class="text-center mb-11">
@@ -98,7 +98,8 @@
 
                                 </div>
                                 <!--begin::Link-->
-                                <a href="authentication/layouts/creative/reset-password.html" class="link-primary">Lupa Password</a>
+                                <a href="authentication/layouts/creative/reset-password.html" class="link-primary">Lupa
+                                    Password</a>
                                 <!--end::Link-->
                             </div>
                             <!--end::Wrapper-->
@@ -132,4 +133,42 @@
         </div>
         <!--end::Authentication - Sign-in-->
     </div>
+    @section('content_script')
+        <script>
+            $(document).ready(function () {
+                // Handle form submission
+                $('#loginForm').on('submit', function (e) {
+                    e.preventDefault(); // Prevent the default form submission
+
+                    // Show loading spinner
+                    $('#kt_sign_in_submit').prop('disabled', true).find('.indicator-progress').show();
+
+                    // Send AJAX request
+                    $.ajax({
+                        url: '{{ route('login') }}',  // Laravel route
+                        method: 'POST',
+                        data: $(this).serialize(),  // Serialize form data
+                        success: function (response) {
+                            if (response.success) {
+                                // Redirect or show a success message
+                                window.location.href = response.redirect_url;  // Example: redirect after successful login
+                            } else {
+                                // Handle validation errors or other issues
+                                alert(response.message);  // You can handle error messages based on response
+                            }
+                        },
+                        error: function (xhr, status, error) {
+                            // Handle AJAX error
+                            alert("An error occurred. Please try again.");
+                        },
+                        complete: function () {
+                            // Hide loading spinner
+                            $('#kt_sign_in_submit').prop('disabled', false).find('.indicator-progress').hide();
+                        }
+                    });
+                });
+            });
+        </script>
+
+    @endsection
 @endsection
